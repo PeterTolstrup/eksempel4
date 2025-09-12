@@ -3,7 +3,7 @@ const { variant, img, tag, text, link } = Astro.props;
 ---
 
 <article class={variant}>
-  <img src={img} />
+  <img src={img} alt={`Billede af ${text}`} />
   <p class="tag"><a href={link}>{tag}</a></p>
   <p>{text}</p>
 </article>

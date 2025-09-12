@@ -1,0 +1,37 @@
+---
+const { overskrift, catagory, colortheme } = Astro.props;
+---
+
+<section class={colortheme}>
+  <p>{catagory}</p>
+  <h2>{overskrift}</h2>
+  <div class="grid_3_1f">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .dark {
+    background-color: rgb(29, 29, 29);
+    color: #fff;
+  }
+
+  .light {
+    font-size: smaller;
+    background-color: rgb(252, 203, 203);
+    color: #026002;
+  }
+
+  .grid_3_1f {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  @media (min-width: 900px) {
+    .grid_3_1f {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+</style>
